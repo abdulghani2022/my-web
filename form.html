@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<h2 id="demo" style="text-align: center;"> ORDER </h2>
+
+<br>
+<br>
+Name: <input type="text" id="name1"> <span id="name2" style="color: red;"></span>
+<br>
+<br>
+Phone No: <input type="text" id="no1"> <span id="no2" style="color: red;"></span>
+<br>
+<br>
+Select your coffee:
+<br>
+<input type="checkbox" id="latteCheckbox" value="3"> Latte 3 JD
+<input type="checkbox" id="cappuccinoCheckbox" value="2"> Cappuccino 2 JD
+<input type="checkbox" id="espressoCheckbox" value="4"> Espresso 4 JD
+<input type="checkbox" id="mochaCheckbox" value="3"> Mocha 3 JD
+<span id="coffeeError" style="color: red;"></span>
+<br>
+<br>
+<form id="pay">
+Payment Method :
+<input type="radio" name="payment" value="Cach"> Cach </input>
+<input type="radio" name="payment" value="Visa"> Visa </input>
+<span id="pay2" style="color: red;"></span>
+</form>
+<br>
+<br>
+
+<button type="button" onclick="fun1()">report</button>
+
+<script>
+function fun1() {
+
+// Name
+var n = document.getElementById("name1").value;
+if (n === "") {
+document.getElementById("name2").innerHTML = "Invalid, please enter a name";
+} 
+else if (!isNaN(n)) {
+document.getElementById("name2").innerHTML = "Invalid, name cannot be a number";
+return;
+} else {
+document.getElementById("name3").innerHTML = "Name = " + n;
+}
+
+// Phone No
+var ph = document.getElementById("no1").value;
+var pho = ph.length;
+
+if (pho !== 10 || isNaN(ph)) {
+document.getElementById("no2").innerHTML = "Invalid input, please enter a numeric value with exactly 10 characters.";
+
+} else {
+document.getElementById("no3").innerHTML = "Phone no = " + ph;
+
+}
+
+// Coffee Selection
+var latte = 0;
+if (document.getElementById("latteCheckbox").checked) {
+latte = 3;
+}
+
+var cappuccino = 0;
+if (document.getElementById("cappuccinoCheckbox").checked) {
+cappuccino = 2;
+}
+
+var espresso = 0;
+if (document.getElementById("espressoCheckbox").checked) {
+espresso = 4;
+}
+
+var mocha = 0;
+if (document.getElementById("mochaCheckbox").checked) {
+mocha = 3;
+
+}
+
+
+var total = latte + cappuccino + espresso + mocha;
+
+if (total === 0) {
+document.getElementById("coffeeError").innerHTML = "Please select at least one coffee type";
+document.getElementById("total").innerHTML = "";
+
+} else {
+document.getElementById("total").innerHTML = "";
+document.getElementById("total").innerHTML = "Total = " + total + " JD";
+}
+// payment
+var p=document.getElementsByName("pay");
+var i =document.getElementsByName("payment");
+if (i[0].checked)
+document.getElementById("pay3").innerHTML=("Payment = Cash")
+else if(i[1].checked)
+document.getElementById("pay3").innerHTML=("Payment = Visa")
+else {
+document.getElementById("pay2").innerHTML=("invaled input, you must select one ");
+document.getElementById("pay3").innerHTML = "";
+
+}
+}
+
+
+
+</script>
+
+<br>
+<br>
+<div style="border-style: solid; width: 500px; height: 400px; margin-left: 500px; margin-bottom: 100px;">
+<h3 id="name3" style="font-size: 20px;"></h3>
+<h3 id="no3" style="font-size: 20px;"></h3>
+<h3 id="total" style="font-size: 20px;"></h3>
+<h3 id="pay3" style="font-size: 20px;"></h3>
+</div>
+</body>
+
+</html>

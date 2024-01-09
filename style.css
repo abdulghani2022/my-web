@@ -1,0 +1,71 @@
+
+html {
+    box-sizing: border-box;
+  }
+  body{
+    background-color: #5e3e22;
+}
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #d38b4c;
+    color: black;
+  }
+
+  * { 
+    box-sizing: inherit;
+  }
+ 
+  .column {
+    margin-left: 25px;
+    width: 22.2%;
+    float: left;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  .card {
+    font-size: 25px;
+    background-color:rgb(205, 166, 119);
+    text-decoration: underline;
+    text-align: center;
+    color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+  }
+
+  .card button {
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  a:link{
+    text-decoration: underline;
+}
+  a:hover{
+    color:burlywood;
+    text-decoration: overline;
+    }
+    a:visited{
+        color: #ffaa60;
+    }
+    nav {
+      background-color:#382417;
+      padding: 10px;
+    }
+    nav ul {
+      padding: 0;
+      text-align: center;
+      font-size: 20px;
+    }
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+    nav ul li a {
+      color: #000000;
+      text-decoration: none;
+    }
